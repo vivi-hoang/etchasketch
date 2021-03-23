@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+
+/* :root selects the top-most element in document tree */
+:root {
+    --grid-cols: 1; /* double-hyphens signify custom properties */
+    --grid-rows: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #a00404;
+}
+
+header {
+    padding: 20px;
+}
+
+header > h1 {
+    color: #c2bc07;
+    font-size: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+    font-family: Playball, serif;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 30rem;
+    grid-template-areas: 
+    ". screen .";
+}
+ 
+#screen {
+    grid-area: screen;
+    background: #555555;
+    display: grid;
+    /* gap: 0.25rem; */
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), 1fr);    
+}
+
+.square {
+    border: 1px solid #ddd;
+    padding: 0.15rem;
+    text-align: center;
+}
